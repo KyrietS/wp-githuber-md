@@ -502,6 +502,7 @@ class Setting extends ControllerAbstract {
 						'tomorrow'       => 'tomorrow',
 						'coy'            => 'coy',
 						'solarizedlight' => 'solarizedlight',
+						'vs'             => 'vs',
 					),
 				),
 
