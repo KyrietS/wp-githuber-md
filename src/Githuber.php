@@ -306,27 +306,31 @@ class Githuber {
 					max-width: 320px;
 					float: left;
 				}
-				.md-widget-toc ul, .md-widget-toc ol, .md-post-toc ul, .md-post-toc ol {
-					padding-left: 15px;
-					margin: 0;
+
+				.md-widget-toc ol, #md-post-toc ol {
+				  list-style-type: none;
+				  counter-reset: item;
+				  margin: 0;
+				  padding: 0;
 				}
-				.md-widget-toc ul ul, .md-widget-toc ul ol, .md-widget-toc ol ul, .md-widget-toc ol ol, .md-post-toc ul ul, .md-post-toc ul ol, .md-post-toc ol ul, .md-post-toc ol ol {
-					padding-left: 2em;
+				#md-post-toc > ol {
+				  margin-left: 1.5em;
 				}
-				.md-widget-toc ul ol, .md-post-toc ul ol {
-					list-style-type: lower-roman;
+				.md-widget-toc ol > li, .md-post-toc ol > li {
+				  display: table;
+				  counter-increment: item;
+				  margin-bottom: 0.2em;
 				}
-				.md-widget-toc ul ul ol, .md-widget-toc ul ol ol, .md-post-toc ul ul ol, .md-post-toc ul ol ol {
-					list-style-type: lower-alpha;
+				.md-widget-toc ol > li:before, .md-post-toc ol > li:before {
+				  content: counters(item, ".") ". ";
+				  display: table-cell;
+				  padding-right: 0.6em;    
 				}
-				.md-widget-toc ol ul, .md-widget-toc ol ol, .md-post-toc ol ul, .md-post-toc ol ol {
-					padding-left: 2em;
+				.md-widget-toc ol li ol > li, .md-post-toc ol li ol > li {
+				  margin: 0;
 				}
-				.md-widget-toc ol ol, .md-post-toc ol ol {
-					list-style-type: lower-roman;
-				}
-				.md-widget-toc ol ul ol, .md-widget-toc ol ol ol, .md-post-toc ol ul ol, .md-post-toc ol ol ol {
-					list-style-type: lower-alpha;
+				.md-widget-toc ol li ol > li:before, .md-post-toc ol li ol > li:before {
+				  content: counters(item, ".") " ";
 				}
 			';
 		}
